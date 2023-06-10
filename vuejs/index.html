@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://docs.vuejs.id/js/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>API Vercel</h1>
+        <div v-for="data in dataalatberat"></div>
+            {{ data.NamaAlatBerat }}
+            {{ data.Merk }}
+            {{ data.image }}
+            {{ data.Harga }}
+            {{ data.Deskripsi }}
+    </div>
+
+    
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: function () {
+                return {
+                    dataalatberat: null,
+                }
+            },
+            methods: {
+                getalatberat: function () {
+                    axios.get('https://alat-berat-project.vercel.app/alatberat')
+                    .then(response => {
+                        console.log(response.data);
+                        dataalatberat = response.data
+                    })
+                },
+                // methid postMhs
+            },
+            mounted () {
+                //panggil method getMhs()
+                this.getalatberat()
+            }
+        })
+    </script>
+</body>
+</html>
