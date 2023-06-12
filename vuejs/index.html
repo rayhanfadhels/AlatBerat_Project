@@ -4,46 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VueJS</title>
+    <title>Two Brothers</title>
     <script src="https://docs.vuejs.id/js/vue.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>    
+    
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  
 </head>
 <body>
-    <div id="app">
-        <h1>API Vercel</h1>
-        <div v-for="data in dataalatberat"></div>
-            {{ data.NamaAlatBerat }}
-            {{ data.Merk }}
-            {{ data.image }}
-            {{ data.Harga }}
-            {{ data.Deskripsi }}
-    </div>
+    <header>
+        <a href="#" class="logo">Two Bro's Group</a>
+        <ul class="navlist">
+            <li><a href="#0">Home</a></li>
+            <li><a href="#0">Contact us</a></li>
+            <li><a href="/vuejs/product.html">Product</a></li>
+            <a href="/vuejs/SukuCadang.html">Spare Part</a> 
+
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </ul>
+    </header>
+
+    <section class="alat">
+        <div class="alat-txt">
+            
+            <h4>Jual Beli Alat Berat</h4>
+            <h1>Two Brothers Group</h1>
+            <p>two bro's group menawarkan penjualan <br> berbagai macam product alat berat  <br>yang sudah berstandar internasional</p>
+            <a href="#">about us</a>
+            <a href="#" class="ctaa"><i class="ri-play-fill"></i>watch video</a>      
+            
+        </div>
+
+        <div class="icons">
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-youtube-line"></i></a>
+            <a href="#"><i class="ri-facebook-circle-line"></i></a>
+
+        </div>
+
+        
+        
+        <style>
+            body {
+              background-image: url('https://cdn.wallpapersafari.com/44/59/KzSCv0.jpg');
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          </style>
+          
+       
+    </section>
 
     
-
-    <script>
-        let vm = new Vue({
-            el: '#app',
-            data: function () {
-                return {
-                    dataalatberat: null,
-                }
-            },
-            methods: {
-                getalatberat: function () {
-                    axios.get('https://alat-berat-project.vercel.app/alatberat')
-                    .then(response => {
-                        console.log(response.data);
-                        dataalatberat = response.data
-                    })
-                },
-                // methid postMhs
-            },
-            mounted () {
-                //panggil method getMhs()
-                this.getalatberat()
-            }
-        })
-    </script>
+   
 </body>
 </html>

@@ -13,8 +13,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 const alatberatRoutes = require('./routes/alatberat')
+const sukucadangRoutes = require('./routes/sukucadang')
 
 app.use('/alatberat', alatberatRoutes)
+app.use('/sukucadang', sukucadangRoutes)
 
 mongoose.connect(process.env.DB_CONNECTION,{
     useNewUrlParser: true,
